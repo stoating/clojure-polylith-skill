@@ -17,7 +17,7 @@ Skills are instructions loaded into an AI agent's context — they influence how
 - Unintended project configuration changes
 
 **Before installing:**
-1. Read every `.md` file in the `clojure-polylith/` directory
+1. Read every `.md` file in the `polylith/` directory
 2. Ask your agent to perform a security review (prompt below)
 3. Only then install
 
@@ -39,10 +39,13 @@ Claude Code has a native plugin marketplace. From an active session:
 
 ```
 /plugin marketplace add stoating/clojure-polylith-skill
-/plugin install polylith@clojure-polylith-skill
+/plugin install clojure-polylith@clojure-polylith-skill
 ```
 
-The skill is then discovered automatically. Restart the session if it isn't picked up immediately.
+The skill is then discovered automatically. Restart the session if it isn't picked up immediately. Once installed, invoke it with:
+```
+/polylith
+```
 
 To update later:
 ```
@@ -64,31 +67,31 @@ The skill becomes available in the next Claude Code session. Updates are a `git 
 
 ### C) Claude.ai / Claude Desktop (upload)
 
-Claude.ai supports uploading skill folders from the Skills panel in Projects. Zip `clojure-polylith/` and upload it. Details: [anthropics/skills](https://github.com/anthropics/skills).
+Claude.ai supports uploading skill folders from the Skills panel in Projects. Zip `polylith/` and upload it. Details: [anthropics/skills](https://github.com/anthropics/skills).
 
 ### D) Cursor
 
 Cursor reads `AGENTS.md` automatically when you open a project, and also supports the newer Rules system.
 
-- **Per-project:** copy `clojure-polylith/` and `AGENTS.md` into your Polylith workspace repo. Cursor will read `AGENTS.md` as context on every chat.
-- **Global:** in Cursor Settings → Rules, add a rule referencing `clojure-polylith/SKILL.md`.
+- **Per-project:** copy `polylith/` and `AGENTS.md` into your Polylith workspace repo. Cursor will read `AGENTS.md` as context on every chat.
+- **Global:** in Cursor Settings → Rules, add a rule referencing `polylith/SKILL.md`.
 
 ### E) OpenAI Codex CLI / `codex`
 
-Codex honors `AGENTS.md` at the project root. Copy this repository next to your Polylith workspace and Codex will pick up `AGENTS.md`, which in turn points at `clojure-polylith/SKILL.md`.
+Codex honors `AGENTS.md` at the project root. Copy this repository next to your Polylith workspace and Codex will pick up `AGENTS.md`, which in turn points at `polylith/SKILL.md`.
 
 ### F) Aider
 
 Aider reads `AGENTS.md` as a fallback for `CONVENTIONS.md`, or you can add the skill files explicitly:
 
 ```bash
-aider --read clojure-polylith-skill/clojure-polylith/SKILL.md \
-      --read clojure-polylith-skill/clojure-polylith/core-concepts.md
+aider --read clojure-polylith-skill/polylith/SKILL.md \
+      --read clojure-polylith-skill/polylith/core-concepts.md
 ```
 
 ### G) Gemini CLI / Google Jules
 
-Both honor `AGENTS.md`. Place this repo (or just `AGENTS.md` + `clojure-polylith/`) at your project root.
+Both honor `AGENTS.md`. Place this repo (or just `AGENTS.md` + `polylith/`) at your project root.
 
 ### H) Windsurf, Cline, Roo Code, Zed, Amp, Factory
 
@@ -99,7 +102,7 @@ All of the above support the `AGENTS.md` convention. Drop the repo at your proje
 Every listed agent accepts plain Markdown as context. If yours isn't covered:
 
 1. Open a chat / session.
-2. Attach or paste the contents of `clojure-polylith/SKILL.md` as "system instructions" or "context".
+2. Attach or paste the contents of `polylith/SKILL.md` as "system instructions" or "context".
 3. Attach individual reference files (e.g. `commands.md`, `workflows.md`) when the task matches the decision table in `SKILL.md`.
 
 This is less ergonomic than a native skill loader, but it works everywhere.
@@ -115,7 +118,7 @@ This is less ergonomic than a native skill loader, but it works everywhere.
 │   └── plugin.json            # Claude Code plugin manifest
 ├── AGENTS.md                  # Cross-agent entry point (agents.md convention)
 ├── README.md                  # This file
-└── clojure-polylith/          # The actual skill
+└── polylith/                  # The actual skill
     ├── SKILL.md               # Entry point — decision table
     ├── core-concepts.md       # Workspace, components, bases, projects, interfaces
     ├── commands.md            # poly check, info, diff, deps, test, libs, create, ws, shell
@@ -125,7 +128,7 @@ This is less ergonomic than a native skill loader, but it works everywhere.
     └── anti-patterns.md       # Common mistakes and how to fix them
 ```
 
-Only `clojure-polylith/` contains the skill content. The rest is metadata (plugin manifest, cross-agent pointer, docs).
+Only `polylith/` contains the skill content. The rest is metadata (plugin manifest, cross-agent pointer, docs).
 
 ---
 
@@ -147,7 +150,7 @@ Only `clojure-polylith/` contains the skill content. The rest is metadata (plugi
 
 When Polylith versions or best practices change:
 
-1. Edit the relevant `.md` file in `clojure-polylith/`.
+1. Edit the relevant `.md` file in `polylith/`.
 2. If installed via marketplace: `/plugin marketplace update clojure-polylith-skill`.
 3. If installed manually: re-run `cp -r clojure-polylith ~/.claude/skills/`.
 4. Other agents pick changes up on next session.
