@@ -1,0 +1,5 @@
+{
+  "name": "clojure-polylith",
+  "description": "Clojure Polylith skill — components, bases, projects, interfaces, poly commands, workspace configuration, profiles, incremental testing, and setup.",
+  "version": "0.1.0"
+}

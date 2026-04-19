@@ -1,0 +1,17 @@
+{
+  "name": "clojure-polylith-skill",
+  "metadata": {
+    "description": "Clojure Polylith skill set for AI coding agents — components, bases, projects, interfaces, poly commands, workspace configuration, profiles, incremental testing, and setup."
+  },
+  "owner": {
+    "name": "stoating"
+  },
+  "plugins": [
+    {
+      "name": "clojure-polylith",
+      "source": "./",
+      "description": "Clojure Polylith skill — components, bases, projects, interfaces, poly commands, workspace configuration, profiles, incremental testing, and setup.",
+      "version": "0.1.0"
+    }
+  ]
+}
