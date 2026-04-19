@@ -54,7 +54,14 @@ To update later:
 
 Reference: [Claude Code plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces).
 
-### B) Claude Code (manual copy)
+### B) Claude Code (via the stoating marketplace)
+
+```
+/plugin marketplace add stoating/plugins
+/plugin install clojure-polylith@stoating
+```
+
+### C) Claude Code (manual copy)
 
 If you prefer not to use the marketplace — or want to pin a specific commit — clone and copy:
 
@@ -65,22 +72,22 @@ cp -r clojure-polylith-skill/clojure-polylith ~/.claude/skills/
 
 The skill becomes available in the next Claude Code session. Updates are a `git pull` + re-copy.
 
-### C) Claude.ai / Claude Desktop (upload)
+### D) Claude.ai / Claude Desktop (upload)
 
 Claude.ai supports uploading skill folders from the Skills panel in Projects. Zip `polylith/` and upload it. Details: [anthropics/skills](https://github.com/anthropics/skills).
 
-### D) Cursor
+### E) Cursor
 
 Cursor reads `AGENTS.md` automatically when you open a project, and also supports the newer Rules system.
 
 - **Per-project:** copy `polylith/` and `AGENTS.md` into your Polylith workspace repo. Cursor will read `AGENTS.md` as context on every chat.
 - **Global:** in Cursor Settings → Rules, add a rule referencing `polylith/SKILL.md`.
 
-### E) OpenAI Codex CLI / `codex`
+### F) OpenAI Codex CLI / `codex`
 
 Codex honors `AGENTS.md` at the project root. Copy this repository next to your Polylith workspace and Codex will pick up `AGENTS.md`, which in turn points at `polylith/SKILL.md`.
 
-### F) Aider
+### G) Aider
 
 Aider reads `AGENTS.md` as a fallback for `CONVENTIONS.md`, or you can add the skill files explicitly:
 
@@ -89,15 +96,15 @@ aider --read clojure-polylith-skill/polylith/SKILL.md \
       --read clojure-polylith-skill/polylith/core-concepts.md
 ```
 
-### G) Gemini CLI / Google Jules
+### H) Gemini CLI / Google Jules
 
 Both honor `AGENTS.md`. Place this repo (or just `AGENTS.md` + `polylith/`) at your project root.
 
-### H) Windsurf, Cline, Roo Code, Zed, Amp, Factory
+### I) Windsurf, Cline, Roo Code, Zed, Amp, Factory
 
 All of the above support the `AGENTS.md` convention. Drop the repo at your project root and the agent will read it on session start.
 
-### I) Any other agent — generic fallback
+### J) Any other agent — generic fallback
 
 Every listed agent accepts plain Markdown as context. If yours isn't covered:
 
