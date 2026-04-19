@@ -39,7 +39,7 @@ Claude Code has a native plugin marketplace. From an active session:
 
 ```
 /plugin marketplace add stoating/clojure-polylith-skill
-/plugin install clojure-polylith@clojure-polylith-skill
+/plugin install polylith@clojure-polylith-skill
 ```
 
 The skill is then discovered automatically. Restart the session if it isn't picked up immediately. Once installed, invoke it with:
@@ -58,7 +58,7 @@ Reference: [Claude Code plugin marketplaces](https://code.claude.com/docs/en/plu
 
 ```
 /plugin marketplace add stoating/plugins
-/plugin install clojure-polylith@stoating
+/plugin install polylith@stoating
 ```
 
 ### C) Claude Code (manual copy)
@@ -67,7 +67,7 @@ If you prefer not to use the marketplace â€” or want to pin a specific commit â€
 
 ```bash
 git clone https://github.com/stoating/clojure-polylith-skill.git
-cp -r clojure-polylith-skill/clojure-polylith ~/.claude/skills/
+cp -r clojure-polylith-skill/polylith ~/.claude/skills/
 ```
 
 The skill becomes available in the next Claude Code session. Updates are a `git pull` + re-copy.
