@@ -176,4 +176,6 @@ The skill is distilled from the following public sources:
 
 ## License
 
-Nothing in this skill is original research — it is a curated and organized digest of the sources above, intended to save the agent (and you) from rediscovering the same Polylith configuration lore every time.
+See [LICENSE](LICENSE).
+
+Nothing in this skill is original research — it is a curated and organized digest of the sources above, intended to save the agent (and you) from rediscovering the same configuration lore every time.
